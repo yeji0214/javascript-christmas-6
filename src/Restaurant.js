@@ -5,5 +5,6 @@ import InputView from './InputView.js';
 
 export const enter = async () => {
     OutputView.displayGreeting();
-    InputView.getVisitDate();
+    await InputView.getVisitDate();
+    await InputView.getOrderedMenu();
 }

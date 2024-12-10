@@ -1,3 +1,5 @@
+import { MESSAGES } from "./constants.js";
+
 class VisitDate {
     #date;
 
@@ -6,7 +8,7 @@ class VisitDate {
     }
 
     #validate(date) {
-        if (isNaN(date) || date < 1 || date > 31 || !Number.isInteger(date)) throw new Error('[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.');
+        if (isNaN(date) || date < 1 || date > 31 || !Number.isInteger(date)) throw new Error(MESSAGES.ERROR.INVALID_DATE);
 
         return date;
     }
