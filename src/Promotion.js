@@ -1,4 +1,5 @@
-let appliedPromotion = { '증정 이벤트': '없음' }
+let appliedPromotion = {};
+let present = '없음';
 const weekendDates = [1, 2, 8, 9, 15, 16, 22, 23, 29, 30];
 const specialDates = [3, 10, 17, 24, 31];
 
@@ -8,7 +9,7 @@ export const apply = (date, orderedMenu, totalOrderAmount) => {
         if (!weekendDates.includes(date)) weekday(orderedMenu);
         else weekend(orderedMenu);
         if (specialDates.includes(date)) special();
-        if (totalOrderAmount >= 120000) appliedPromotion['증정 이벤트'] = 25000;
+        if (totalOrderAmount >= 120000) present = '샴페인 1개';
     }
 
     return appliedPromotion;
@@ -36,4 +37,8 @@ export const weekend = (orderedMenu) => {
 
 export const special = () => {
     appliedPromotion['특별 할인'] = 1000;
+}
+
+export const getPresent = () => {
+    return present;
 }

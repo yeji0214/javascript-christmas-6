@@ -13,3 +13,7 @@ export const TotalBenefitAmount = (appliedPromotion) => {
     }
     return total;
 }
+
+export const PaymentAmount = (totalOrderAmount, totalBenefitAmount) => {
+    return totalOrderAmount - totalBenefitAmount;
+}

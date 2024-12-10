@@ -1,3 +1,5 @@
+import { getPresent } from "./Promotion.js";
+
 class Badge {
     #badge;
 
@@ -6,6 +8,7 @@ class Badge {
     }
 
     #calculate(benefit) {
+        if (getPresent() !== '없음') benefit += 25000;
         if (benefit >= 20000) return '산타';
         if (benefit >= 10000) return '트리';
         if (benefit >= 5000) return '별';

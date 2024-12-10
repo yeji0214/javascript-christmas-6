@@ -12,6 +12,7 @@ export const enter = async () => {
     const orderedMenu = await InputView.getOrderedMenu();
     const totalOrderAmount = TotalOrderAmount(orderedMenu);
     const appliedPromotion = apply(date, orderedMenu, totalOrderAmount);
-    const badge = new Badge(TotalBenefitAmount(appliedPromotion)).getBadge();
-    Console.print(badge);
+    const totalBenefitAmount = TotalBenefitAmount(appliedPromotion);
+    const badge = new Badge(totalBenefitAmount).getBadge();
+    OutputView.displayReceipt(date, orderedMenu, totalOrderAmount, appliedPromotion, totalBenefitAmount, badge);
 }
