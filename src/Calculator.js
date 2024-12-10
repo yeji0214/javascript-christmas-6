@@ -5,3 +5,11 @@ export const TotalOrderAmount = (orderedMenu) => {
     }
     return total;
 }
+
+export const TotalBenefitAmount = (appliedPromotion) => {
+    let total = 0;
+    for (const [name, benefit] of Object.entries(appliedPromotion)) {
+        if (!isNaN(Number(benefit))) total += benefit;
+    }
+    return total;
+}
