@@ -32,7 +32,7 @@ export const weekend = (orderedMenu) => {
     for (const [key, info] of Object.entries(orderedMenu)) {
         if (info['category'] === '메인') cnt += 1
     }
-    appliedPromotion['평일 할인'] = 2023 * cnt;
+    appliedPromotion['주말 할인'] = 2023 * cnt;
 }
 
 export const special = () => {

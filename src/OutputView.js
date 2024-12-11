@@ -46,7 +46,7 @@ const OutputView = {
         if (Object.keys(appliedPromotion).length === 0) Console.print('없음\n');
         else {
             for (const [name, benefit] of Object.entries(appliedPromotion)) {
-                Console.print(`${name}: -${benefit.toLocaleString()}원\n`);
+                if (benefit > 0) Console.print(`${name}: -${benefit.toLocaleString()}원\n`);
             }
         }
         if (present !== '없음') Console.print('증정 이벤트: -25,000원\n');
